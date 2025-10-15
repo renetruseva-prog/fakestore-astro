@@ -1,4 +1,5 @@
 ---
+import Header from '../components/Header.astro';
 const {titlePage} = Astro.props;
 ---
 
@@ -14,6 +15,7 @@ const {titlePage} = Astro.props;
     <title>{titlePage}</title>
   </head>
   <body>
+    <Header />
     <main>
       <slot />
    </main>
