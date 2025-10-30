@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { getCollection } from 'astro:content';
+
+// Generate a page for every product
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+
+  return products.map((product) => ({
+    params: { id: product.data.id.toString() }, // URL param
+    props: { product }, // Pass product to the page
+  }));
+}
+
+// Receive the product data on this page
+const { product } = Astro.props;
+---
+
+
+<BaseLayout>
+    <ProductCard product={product} /> 
+  </BaseLayout>
