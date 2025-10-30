@@ -2,7 +2,7 @@
 const { product } = Astro.props;
 ---
 
-<article>
+<article class={product.rating.rate > 4.5 ? 'popular' : ''}>
   <img src={product.image} alt={product.image} width="300" height="400" />
   <h3>{product.title}</h3>
   <p class="description">
@@ -100,5 +100,28 @@ const { product } = Astro.props;
 
   button:hover {
     background-color: var(--c-dark);
+  }
+
+  .popular::after {
+    content: "";
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4em;
+    height: 4em;
+    padding-top: 2em;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
+
+  .popular::before {
+    content: "Top rated";
+    color: white;
+    position: absolute;
+    top: 1.4em;
+    right: 0;
+    rotate: 45deg;
+    z-index: 2;
+    font-size: 0.7em;
   }
 </style>

@@ -25,26 +25,4 @@ import ProductCard from '../components/ProductCard.astro';
     text-decoration: none;
     color: inherit;
   }
-  .popular::after {
-    content: "";
-    background-color: var(--c-primary);
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 4em;
-    height: 4em;
-    padding-top: 2em;
-    clip-path: polygon(0 0, 100% 0, 100% 100%);
-  }
-
-  .popular::before {
-    content: "Top rated";
-    color: white;
-    position: absolute;
-    top: 1.4em;
-    right: 0;
-    rotate: 45deg;
-    z-index: 2;
-    font-size: 0.7em;
-  }
     </style>
