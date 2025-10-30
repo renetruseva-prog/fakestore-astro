@@ -462,6 +462,5 @@ We will let the user browse to a previous or next product via the detail page. F
 
 - Add the `PrevNext` component to the detail page and pass the `prev`, `next` and `path` props to it. The `path` will be `products` in this case.
 - Check if you can navigate to the previous and next product. And back and forth to the index page.
-
 - Commit your changes, push to GitHub, open a PR and merge it with the main branch.
   Locally, switch back to the main branch and pull the changes.
