@@ -1,10 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
-const products = await getCollection ('products');
+import ProductCard from '../components/ProductCard.astro'; // adjust the path if needed
+
+const products = await getCollection('products');
 ---
 
 <ul>
-    {products.map(product => (
-      <li>{product.data.title}</li>
-    ))}
-  </ul>
+  {products.map((product) => (
+    <li>
+      <a href={`/products/${product.data.id}`}>
+        <ProductCard product={product} />
+      </a>
+    </li>
+  ))}
+</ul>

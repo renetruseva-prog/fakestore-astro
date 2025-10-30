@@ -1,13 +1,21 @@
-<article>
-    <img src="Product image url"
-      alt="Product image"
-      width="300"
-      height="400"
-    />
-    <h3>Product title</h3>
-    <p class="description">
-      Product description
-    </p>
-    <p class="price">&euro; <span>Product price</span></p>
-    <button>Buy now</button>
-  </article>
+---
+const { product } = Astro.props;
+---
+
+<article class={product.data.rating?.rate > 4.5 ? 'popular' : ''}>
+  <img
+    src={product.data.image}
+    alt={product.data.title}
+    width="300"
+    height="400"
+  />
+  <h3>{product.data.title}</h3>
+
+  <p class="description">
+    {product.data.description}
+  </p>
+
+  <p class="price">&euro; <span>{product.data.price}</span></p>
+
+  <button>Buy now</button>
+</article>
